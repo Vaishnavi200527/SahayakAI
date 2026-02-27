@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
-import { Bell, GraduationCap, Calendar, ExternalLink, BookOpen, Laptop, FileText, Target, Info, Home, LayoutGrid, Mic } from 'lucide-react';
+import { Bell, GraduationCap, Calendar, ExternalLink, FileText, Target, Info } from 'lucide-react';
 import { ExamAlert, Scholarship } from '@/types/education';
 import EducationResources from '@/components/EducationResources';
+import MobileBottomNav from '@/components/MobileBottomNav';
 
 const EducationPage: React.FC = () => {
   const alerts: ExamAlert[] = [
@@ -181,31 +181,7 @@ const EducationPage: React.FC = () => {
       {/* Education Resources Component */}
       <EducationResources />
 
-      {/* Bottom Navigation */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 px-6 py-3 flex justify-between items-center z-50">
-        <Link href="/family/profile" className="flex flex-col items-center gap-1 text-slate-400">
-          <Home size={22} />
-          <span className="text-[10px]">Home</span>
-        </Link>
-        <div className="flex flex-col items-center gap-1 text-slate-400">
-          <LayoutGrid size={22} />
-          <span className="text-[10px]">Schemes</span>
-        </div>
-
-        {/* Floating Mic Button */}
-        <div className="relative -top-8 bg-blue-600 p-4 rounded-full shadow-lg shadow-blue-200 text-white border-4 border-slate-50">
-          <Mic size={24} />
-        </div>
-
-        <div className="flex flex-col items-center gap-1 text-blue-600">
-          <BookOpen size={22} />
-          <span className="text-[10px]">Education</span>
-        </div>
-        <div className="flex flex-col items-center gap-1 text-slate-400">
-          <Bell size={22} />
-          <span className="text-[10px]">Alerts</span>
-        </div>
-      </footer>
+      <MobileBottomNav activeTab="education" />
     </div>
   );
 };

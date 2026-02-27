@@ -1,17 +1,16 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { 
   Users, MapPin, IndianRupee, Edit3, Trash2, 
-  Briefcase, Home, GraduationCap, Heart, ShieldCheck, Plus, Settings2,
-  LayoutGrid, Mic, BookOpen, Bell
+  Briefcase, Home, GraduationCap, Heart, ShieldCheck, Plus
 } from 'lucide-react';
 import { FamilyMember, HouseholdInfo } from '@/types/family';
 import WhyAddMembers from '@/components/WhyAddMembers';
 import AddMemberModal from '@/components/AddMemberModal';
 import { useState } from 'react';
 import { NewMember } from '@/types/form';
+import MobileBottomNav from '@/components/MobileBottomNav';
 
 const FamilyProfilePage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,11 +24,18 @@ const FamilyProfilePage: React.FC = () => {
   // Mock Data - In a real app, this comes from an API
   const household: HouseholdInfo = { location: "Patna, Bihar", annualIncome: 240000 };
 
+  const normalizeRole = (role: NewMember['role']): FamilyMember['role'] => {
+    if (role === 'Worker' || role === 'Homemaker' || role === 'Student' || role === 'Senior Citizen') {
+      return role;
+    }
+    return 'Worker';
+  };
+
   const handleAddMember = (newMemberData: NewMember) => {
     const newMember: FamilyMember = {
       id: (members.length + 1).toString(),
       name: newMemberData.fullName,
-      role: newMemberData.role as any,
+      role: normalizeRole(newMemberData.role),
       age: parseInt(newMemberData.age),
       category: determineCategory(parseInt(newMemberData.age)),
       primaryNeeds: newMemberData.primaryNeeds
@@ -180,31 +186,7 @@ const FamilyProfilePage: React.FC = () => {
       {/* Why Add Members Component */}
       <WhyAddMembers />
 
-      {/* Bottom Navigation */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 px-6 py-3 flex justify-between items-center z-50">
-        <div className="flex flex-col items-center gap-1 text-blue-600">
-          <Home size={22} />
-          <span className="text-[10px]">Home</span>
-        </div>
-        <div className="flex flex-col items-center gap-1 text-slate-400">
-          <LayoutGrid size={22} />
-          <span className="text-[10px]">Schemes</span>
-        </div>
-
-        {/* Floating Mic Button */}
-        <div className="relative -top-8 bg-blue-600 p-4 rounded-full shadow-lg shadow-blue-200 text-white border-4 border-slate-50">
-          <Mic size={24} />
-        </div>
-
-        <Link href="/education" className="flex flex-col items-center gap-1 text-slate-400">
-          <BookOpen size={22} />
-          <span className="text-[10px]">Education</span>
-        </Link>
-        <div className="flex flex-col items-center gap-1 text-slate-400">
-          <Bell size={22} />
-          <span className="text-[10px]">Alerts</span>
-        </div>
-      </footer>
+      <MobileBottomNav activeTab="home" />
     </div>
   );
 };
