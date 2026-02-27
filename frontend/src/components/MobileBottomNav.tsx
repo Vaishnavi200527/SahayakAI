@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { Bell, BookOpen, Home, LayoutGrid, Mic } from "lucide-react";
 
-type TabKey = "home" | "schemes" | "education" | "alerts";
+type TabKey = "home" | "schemes" | "assistant" | "education" | "alerts";
 
 type MobileBottomNavProps = {
   activeTab: TabKey;
 };
 
 const tabClass = (active: boolean) =>
-  `flex flex-col items-center gap-1 ${active ? "text-[#1549D1]" : "text-slate-400"}`;
+  `flex flex-col items-center gap-1 transition-colors ${active ? "text-[#1549D1]" : "text-slate-400 hover:text-slate-600"}`;
 
 export default function MobileBottomNav({ activeTab }: MobileBottomNavProps) {
   return (
@@ -24,23 +24,22 @@ export default function MobileBottomNav({ activeTab }: MobileBottomNavProps) {
           <span className="text-[10px]">Schemes</span>
         </Link>
 
-        <button
-          type="button"
-          aria-label="Assistant"
-          className="relative -top-8 rounded-full border-4 border-slate-50 bg-[#1549D1] p-4 text-white shadow-lg shadow-blue-200"
-        >
-          <Mic size={24} />
-        </button>
+        <Link href="/assistant" className={tabClass(activeTab === "assistant")} aria-label="Assistant">
+          <div className={`rounded-full p-1 ${activeTab === "assistant" ? "bg-[#1549D1] text-white" : ""}`}>
+            <Mic size={22} />
+          </div>
+          <span className="text-[10px]">Assistant</span>
+        </Link>
 
         <Link href="/education" className={tabClass(activeTab === "education")}>
           <BookOpen size={22} />
           <span className="text-[10px]">Education</span>
         </Link>
 
-        <button type="button" className={tabClass(activeTab === "alerts")} aria-label="Alerts">
+        <Link href="/alerts" className={tabClass(activeTab === "alerts")} aria-label="Alerts">
           <Bell size={22} />
           <span className="text-[10px]">Alerts</span>
-        </button>
+        </Link>
       </div>
     </footer>
   );
