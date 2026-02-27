@@ -1,0 +1,103 @@
+.section {
+  padding: 16px;
+  background-color: #f8fafc;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+/* Resource Grid */
+.resourceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.resourceCard {
+  background: white;
+  padding: 20px 12px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.resourceCard:active {
+  transform: scale(0.98);
+}
+
+.resourceIcon {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.resourceName {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.resourceSub {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Need Help Section */
+.helpBox {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.helpHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.helpText {
+  display: flex;
+  flex-direction: column;
+}
+
+.helpTitle {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.helpSub {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0;
+}
+
+.careerButton {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}

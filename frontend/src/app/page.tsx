@@ -115,7 +115,10 @@ export default function Dashboard() {
           <Mic size={24} />
         </div>
 
-        <NavItem icon={<BookOpen size={22} />} label="Education" />
+        <Link href="/education" className="flex flex-col items-center gap-1 text-slate-400">
+          <BookOpen size={22} />
+          <span className="text-[10px]">Education</span>
+        </Link>
         <NavItem icon={<Bell size={22} />} label="Alerts" />
       </footer>
     </div>

@@ -1,0 +1,64 @@
+.infoCard {
+  display: flex;
+  gap: 16px;
+  margin: 1rem;
+  padding: 24px;
+  background: linear-gradient(to right, #f0fdf4, #eff6ff); /* Light green to light blue */
+  border: 1.5px solid #bbf7d0; /* Soft green border */
+  border-radius: 20px;
+}
+
+.iconContainer {
+  flex-shrink: 0;
+}
+
+.bulbWrapper {
+  background-color: #22c55e; /* Green circle */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.benefitList {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.checkIcon {
+  color: #475569; /* Grayish checkmark as seen in image */
+}

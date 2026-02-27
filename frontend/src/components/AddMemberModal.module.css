@@ -1,0 +1,132 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: #1d4ed8;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 50%;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.roleGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.roleCard {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.roleCardActive {
+  border-color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.textField {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.genderGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.toggleBtn {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.toggleBtnActive {
+  border-color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.footer {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btnCancel {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  font-weight: 600;
+}
+
+.btnSubmit {
+  padding: 14px;
+  border-radius: 12px;
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
