@@ -185,8 +185,6 @@ const FamilyProfilePage: React.FC = () => {
 
       {/* Why Add Members Component */}
       <WhyAddMembers />
-
-      <MobileBottomNav activeTab="home" />
     </div>
   );
 };

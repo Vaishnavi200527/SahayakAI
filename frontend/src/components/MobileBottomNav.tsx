@@ -14,7 +14,7 @@ export default function MobileBottomNav({ activeTab }: MobileBottomNavProps) {
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-100 bg-white px-4 py-3 sm:px-6">
       <div className="mx-auto flex w-full max-w-4xl items-center justify-between">
-        <Link href="/family/profile" className={tabClass(activeTab === "home")}>
+        <Link href="/dashboard" className={tabClass(activeTab === "home")}>
           <Home size={22} />
           <span className="text-[10px]">Home</span>
         </Link>

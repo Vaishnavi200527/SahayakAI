@@ -57,13 +57,13 @@ export default function LoginPage() {
         </div>
 
         <div className="space-y-3">
-          <button
-            type="button"
+          <Link
+            href="/family"
             className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#1549D1] px-4 py-3 text-sm font-semibold text-white"
           >
             <Smartphone size={18} />
             Send OTP
-          </button>
+          </Link>
           <button
             type="button"
             className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#16A34A] px-4 py-3 text-sm font-semibold text-white"

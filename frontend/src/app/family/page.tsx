@@ -1,7 +1,6 @@
 import React from 'react';
 import { User, Plus, Lock, Settings2 } from 'lucide-react';
 import Link from 'next/link';
-import WhyAddMembers from '@/components/WhyAddMembers';
 
 const FAMILY_MEMBERS = [
   { name: "Ramesh", role: "Primary", color: "bg-blue-500", locked: true },
@@ -23,7 +22,7 @@ export default function FamilySelection() {
       {/* Profiles Grid - Exactly the same block structure */}
       <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">
         {FAMILY_MEMBERS.map((member) => (
-          <Link href="/family/profile" key={member.name} className="group flex flex-col items-center gap-4">
+          <Link href="/dashboard" key={member.name} className="group flex flex-col items-center gap-4">
             
             {/* The Square Block */}
             <div className={`relative w-28 h-28 md:w-40 md:h-40 rounded-md ${member.color} 
@@ -67,8 +66,7 @@ export default function FamilySelection() {
       </div>
 
       {/* Why Add Members Component */}
-      <WhyAddMembers />
-
+      
       {/* Manage Button - Refined for light theme */}
       <button className="mt-8 px-8 py-2 border border-slate-300 text-slate-500 uppercase tracking-widest text-sm
         hover:border-blue-600 hover:text-blue-600 transition-all flex items-center gap-2 rounded-sm font-medium">
